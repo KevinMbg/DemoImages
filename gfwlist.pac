@@ -5571,7 +5571,7 @@ function testHost(host, index) {
         for (var j = 0; j < rules[index][i].length; j++) {
             lastRule = rules[index][i][j];
             if (host == lastRule || host.endsWith('.' + lastRule))
-                return i % 2 == 0 ? 'DIRECT' : proxy;
+                return i % 2 == 0 ? 'DIRECT' : 'PROXY 127.0.0.1:1080; SOCKS 127.0.0.1:1080; SOCKS5 127.0.0.1:1080';
         }
     }
     lastRule = '';
