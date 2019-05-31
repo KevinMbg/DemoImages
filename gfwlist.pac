@@ -5558,13 +5558,12 @@ var rules = [
 var lastRule = '';
 
 function FindProxyForURL(url, host) {
-//     for (var i = 0; i < rules.length; i++) {
-//         ret = testHost(host, i);
-//         if (ret != undefined)
-//             return ret;
-//     }
-//     return 'DIRECT';
-    return proxy;
+    for (var i = 0; i < rules.length; i++) {
+        ret = testHost(host, i);
+        if (ret != undefined)
+            return ret;
+    }
+    return 'DIRECT';
 }
 
 function testHost(host, index) {
